@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>The Dungeon</title>
+        <link rel="stylesheet" href="styles/main.css" type="text/css">
+    </head>
+    <body>
+        <div class="runner" id="header">
+            <h1>WELCOME TO THE DUNGEON</h1>
+        </div>
+        <div id="gameBody">
+            <div id="gameWindow" class="game window">
+                <div id="gameTextWindow" class="gameWindowBox">
+                    <p id="introScreen">What is your name, hero?</p>
+                    <div id="introScreenImg"><img src="Images/characterBaseIntroImg.png"></div>
+                </div>
+                <div id="gameInputWindow" class="gameWindowBox">
+                    <input type="text" class="gameTextInput gameInput" id="enterCharName" onkeydown="if(event.keyCode == 13){document.getElementById('submitCharName').click();}" /> <input type="button" value="SUBMIT" class="gameButtonInput gameInput" id="submitCharName" onclick="buildMenu();submitName();dungeonMap(0,0);" />
+                </div>
+            </div>
+            <div id="gameMenu" class="game menu">
+                <div id="gameMenuInstructions" class="menuBox">
+                    <h2>INSTRUCTIONS</h2>
+                    <div id="instructionsText" class="menuSubBox menuSubBoxText">
+                        <p>Move with the arrow keys, or by clicking on the map.</p>
+                        <br/>
+                        <div class="keyImgDiv"><img src="Images/upArrowKey.png" id="upArrowKeyImg" class="arrowKeyImg keyImg"></div>
+                        <div class="keyImgDiv"><img src="Images/leftArrowKey.png" id="leftArrowKeyImg" class="arrowKeyImg keyImg"><img src="Images/downArrowKey.png" id="downArrowKeyImg" class="arrowKeyImg keyImg"><img src="Images/rightArrowKey.png" id="rightArrowKeyImg" class="arrowKeyImg keyImg"></div>
+                        <br/>
+                        <p>Use the I key to open your Inventory and use items.</p>
+                        <br/>
+                        <div class="keyImgDiv"><img src="Images/iKey.png" id="iKeyImg" class="letterKeyImg keyImg"></div>
+                        <br/>
+                        <p>Use the O key to open chests.</p>
+                        <br/>
+                        <div class="keyImgDiv"><img src="Images/oKey.png" id="oKeyImg" class="letterKeyImg keyImg"></div>
+                        <br/>
+                        <p>Use the M key to access your map if you have one in your inventory.</p>
+                        <br/>
+                        <div class="keyImgDiv"><img src="Images/mKey.png" id="mKeyImg" class="letterKeyImg keyImg"></div>
+                        <br/>
+                        <p>Use the esc key to close the current window.</p>
+                        <br/>
+                        <div class="keyImgDiv"><img src="Images/escKey.png" id="escKey" class="letterKeyImg keyImg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="runner" id="footer">
+            <p>jjohan.net</p>
+        </div>
+        <div class="modalWindow" id="modalInventoryWindow" style="display: none;">
+            <input type="button" value="X" class="closeButton" id="closeInventoryButton" onclick="toggleInventory();"/>
+            <h1 id="modalInventoryTitle">Inventory</h1>
+            <div id="modalInventoryLeftDiv">
+                <h2 id="inventoryCharacterName"></h2>
+                <div id="inventoryCharacterImg"><img src="Images/characterBaseIntroImg.png" /></div>
+                <div id="inventoryCharacterStats">
+                    <p id="inventoryCharacterHP" class="inventoryCharacterStatistic"></p>
+                    <p id="inventoryCharacterArmor" class="inventoryCharacterStatistic"></p>
+                    <p id="inventoryCharacterAgility" class="inventoryCharacterStatistic"></p>
+                    <p id="inventoryCharacterPower" class="inventoryCharacterStatistic"></p>
+                </div>
+            </div>
+            <div id="modalInventoryRightDiv">
+                <div id=modalInventoryText></div>
+            </div>
+            <div id="modalInventoryCenterDiv">
+                <div id="inventorySelectDiv"></div>
+                <div id="inventoryDisplayDiv">Choose an item.</div>
+            </div>
+        </div>
+        <div class="modalWindow" id="modalAlertWindow">
+            <div id="modalAlertBackground"></div>
+            <div id="modalAlertText">
+                    <input type="button" value="X" class="closeButton" id="closeAlertButton" onclick="closeAlert();"/>
+                    <div id="modalAlertInnerText"></div>
+            </div>
+        </div>
+        <div class="modalWindow" id="modalMapWindow">
+            <input type="button" value="X" class="closeButton" id="closeMapButton" onclick="toggleMap();"/>
+        </div>
+        <script src="script/main.js" type="text/javascript"></script>
+    </body> 
+</html>
+
+<!-- following elements of the menu div were rewritten in javascript function buildMenu() -->
+                <!--
+                <div id="gameMenuLog" class="menuBox">
+                    <h2>LOG</h2>
+                    <div id="gameLogText" class="menuSubBox menuSubBoxText">
+                    </div>
+                </div>
+                <div id="gameMenuInventory" class="menuBox">
+                    <h2>INVENTORY</h2>
+                    <div id="inventoryText" class="menuSubBox menuSubBoxText">
+                    </div>
+                </div>
+                <div id="gameMenuMap" class="menuBox">
+                    <h2>MAP</h2>
+                    <div id="mapWindow" class="menuSubBox">
+                        <div id = "mapTile1" class="mapTile"></div><div id = "mapTile2" class="mapTile"></div><div id = "mapTile3" class="mapTile"></div><div id = "mapTile4" class="mapTile"></div><div id = "mapTile5" class="mapTile"></div><div id = "mapTile6" class="mapTile"></div><div id = "mapTile7" class="mapTile"></div><div id = "mapTile8" class="mapTile"></div><div id = "mapTile9" class="mapTile"></div>
+                    </div>
+                </div>
+                -->
